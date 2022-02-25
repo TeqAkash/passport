@@ -20,6 +20,8 @@ Route::post('login',[passportAuthController::class,'loginUserExample']);
 //add this middleware to ensure that every request is authenticated
 Route::middleware('auth:api')->group(function(){
     Route::get('redme', [passportAuthController::class,'authenticatedUserDetails']);
+    Route::get('update', [passportAuthController::class,'authenticatedUpdate']);
+    Route::post('update', [passportAuthController::class,'nextUpdate']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

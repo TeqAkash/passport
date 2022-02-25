@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::any('/dashboard', [RegisteredUserController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
-Route::any('/update', [RegisteredUserController::class, 'profileUpdate'])->middleware('auth')->name('update');
+Route::post('/update', [RegisteredUserController::class, 'profileUpdate'])->middleware('auth')->name('update');
 
 Route::get('/update_show',[RegisteredUserController::class,'show']);
 require __DIR__.'/auth.php';

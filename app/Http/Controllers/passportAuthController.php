@@ -9,6 +9,7 @@ use Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 
+
 class passportAuthController extends Controller
 {
     public function registerUserExample(Request $request){
@@ -66,5 +67,21 @@ class passportAuthController extends Controller
     public function authenticatedUserDetails(){   
        
         return auth()->user();
-    }   
+    }
+
+    public function authenticatedUpdate(Request $request){
+        
+        $user = auth()->user();
+        return $user;
+    } 
+    public function nextUpdate(Request $request, User $user){
+        
+        $user=auth()->user();
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        $user->save();
+        return $user;
+    }  
 }
