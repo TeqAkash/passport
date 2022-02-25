@@ -51,4 +51,10 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+    public function index()
+    {
+        // $user = 
+        $data = Auth::User();
+        return view('dashboard',compact('data'));
+    } 
 }
