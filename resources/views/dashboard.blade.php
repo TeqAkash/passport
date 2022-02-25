@@ -29,18 +29,18 @@
           <tbody>
             <tr class="bg-white border-b">
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-              {{$data->id}}
+              {{$user->id}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              {{$data->name}}
+              {{$user->name}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              {{$data->email}}
+              {{$user->email}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
               @csrf
-              @method('DELETE')
-              <button type="submit" class="px-4 py-1 text-sm text-dark bg-red-400 rounded">Delete</button>
+              <a href="/update_show">Update</a>
+            
               </td>
             </tr class="bg-white border-b">
           </tbody>

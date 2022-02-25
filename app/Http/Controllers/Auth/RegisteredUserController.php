@@ -53,8 +53,24 @@ class RegisteredUserController extends Controller
     }
     public function index()
     {
-        // $user = 
-        $data = Auth::User();
-        return view('dashboard',compact('data'));
+        $user = Auth::User();
+        return view('dashboard',compact('user'));
     } 
+    public function show(){
+        return view('update');
+    }
+
+    public function profileUpdate(Request $request){
+        //validation rules
+
+        $request->validate([
+            'name' =>'required|min:4|string|max:255',
+            'email'=>'required|email|string|max:255'
+        ]);
+        $user =Auth::user();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->save();
+        return view('dashboard',compact('user'))->with('message','Profile Updated');
+    }
 }
