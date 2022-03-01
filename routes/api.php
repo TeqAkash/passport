@@ -14,7 +14,10 @@ use App\Http\Controllers\passportAuthController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+// Route::get('/reset-pass/{token}', function ($token) {
+//     return view('auth.reset-password', ['token' => $token]);
+Route::post('reset-pass',[passportAuthController::class,'resetPassword']);
+// Route::post('forget-password',[passportAuthController::class,'forgetpassword']);
 Route::post('register',[passportAuthController::class,'registerUserExample']);
 Route::post('login',[passportAuthController::class,'loginUserExample']);
 //add this middleware to ensure that every request is authenticated
@@ -22,6 +25,7 @@ Route::middleware('auth:api')->group(function(){
     Route::get('redme', [passportAuthController::class,'authenticatedUserDetails']);
     Route::get('update', [passportAuthController::class,'authenticatedUpdate']);
     Route::post('update', [passportAuthController::class,'nextUpdate']);
+    
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
