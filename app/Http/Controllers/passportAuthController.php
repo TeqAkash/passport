@@ -123,7 +123,7 @@ class passportAuthController extends Controller
     //         'password' => Hash::make($password)
     //     ])->save();
     //     //$user->setRememberToken(Str::random(60));
-    //         event(new PasswordReset($user));
+    //         event(new PasswordReset($user)); 
     //     });
     //     if($response == Password::PASSWORD_RESET){
     //         $message = "Password reset successfully";
