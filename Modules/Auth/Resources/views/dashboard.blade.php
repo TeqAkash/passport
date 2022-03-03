@@ -1,3 +1,5 @@
+@extends('auth::layouts.master')
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -29,13 +31,13 @@
           <tbody>
             <tr class="bg-white border-b">
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-              {{$user->id}}
+              {{$user ?? ''->id}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              {{$user->name}}
+              {{$user ?? ''->name}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              {{$user->email}}
+              {{$user ?? ''->email}}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
               @csrf

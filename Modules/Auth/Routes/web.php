@@ -68,7 +68,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
-    Route::any('/dashboard', [RegisteredUserController::class, 'index'])->middleware(['auth'])->name('dashboard');
+    Route::get('/dashboard', function(){
+        return view('auth::dashboard');})->name('dashboard');
+    Route::post('/dashboard', [RegisteredUserController::class, 'index'])->name('dashboard');
 });
 
     Route::get('/', 'AuthController@index');

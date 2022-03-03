@@ -56,6 +56,7 @@ class RegisteredUserController extends Controller
         $user = Auth::User();
         return view('dashboard',compact('user'));
     } 
+    
     public function show(){
         return view('update');
     }
