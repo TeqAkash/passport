@@ -1,0 +1,13 @@
+{
+    "name": "Laravel",
+    "alias": "laravel",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Laravel\\Providers\\LaravelServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
